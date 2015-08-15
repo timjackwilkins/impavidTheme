@@ -34,6 +34,14 @@ function theme_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
 
+	add_theme_support( 'custom-header', array(
+		'default-image' => 'https://images.unsplash.com/22/open-door.JPG?q=80&fm=jpg&s=f07f9a74406b3fe7bfa566e8567cbc6c',
+		'width'         => 600,
+		'height'        => 600,
+		'uploads'       => true,
+		'header-text'   => true
+	) );
+
 }
 endif;
 
@@ -117,7 +125,7 @@ add_filter( 'wp_page_menu_args', 'hackeryou_page_menu_args' );
  * Sets the post excerpt length to 40 characters.
  */
 function hackeryou_excerpt_length( $length ) {
-	return 40;
+	return 100;
 }
 add_filter( 'excerpt_length', 'hackeryou_excerpt_length' );
 
@@ -166,13 +174,16 @@ function hackeryou_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-	register_sidebar( 
-		array(
-			'name' => 'Custom Widget Area',
-			'id' => 'custom-widget-area',
-			'description' => 'Custom widget area :)'
-		)
-	);
+	if ( function_exists('register_sidebar') )
+	    register_sidebar( array(
+	   'name' => 'Custom Widget Area',
+	   'id' => 'custom-widget-area',
+	   'description' => 'An optional widget area for your site footer',
+	   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	   'after_widget' => "</aside>",
+	   'before_title' => '<h3 class="widget-title">',
+	   'after_title' => '</h3>',
+	   ) );
 
 }
 
