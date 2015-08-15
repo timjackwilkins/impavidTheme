@@ -9,26 +9,49 @@
 
 @import 'normalize';
 @import 'typography';
+@import 'header';
 @import 'navigation';
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
+
+/*
+====================================
+Mixins
+====================================
+*/
+
+@mixin flex {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
 /*
 ====================================
 Default Styling
 ====================================
 */
 
+
+html {
+	position: relative;
+	background: peachpuff;
+}
+
 img {
 	max-width: 100%;
 }
-
+ 
 body {
 	color: #333;
+
 }
 
 .container {
-	max-width: 1200px;
+	max-width: 85%;
 	margin: 0 auto;
 }
 
@@ -42,10 +65,27 @@ body {
 	width: 100%;
 }
 
+.flex {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
 
+ .blogWrapper:nth-child(even) > .featureImg {
+  order: 2
+}
 
+.featureImg {
+	background: red;
+	width: 50%;
+}
 
-
-
+.articleWrapper {
+	background: peachpuff;
+	width: 50%;
+	padding: 2% 7.5%;
+}
 
 

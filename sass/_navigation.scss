@@ -1,14 +1,29 @@
-ul.menu {
+.primaryNav {
 	margin: 0;
-	padding: 0;
+	padding: 0;	
 	li {
-		display: inline;
+		display: inline-block;
 		margin-right: 10px;
 		a {
-			color: #333;
 			padding: 10px;
-			background: #333;
-			color: white;
+			color: #333;
 		}
+	}
+}
+
+.navContainer {
+	background: lightgrey;
+	width: 100%;
+	z-index: 10;
+	height: 9vh;
+}
+
+.navChild {
+	justify-content: space-between;
+	max-width: 85%;
+	margin: auto;
+
+	h1 {
+		margin: 0;
 	}
 }

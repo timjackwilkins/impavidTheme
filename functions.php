@@ -15,6 +15,7 @@ function theme_setup() {
 	add_image_size('square', 150, 150, true);
 
 
+
 	// Add default posts and comments RSS feed links to head
 	add_theme_support( 'automatic-feed-links' );
 
@@ -33,6 +34,13 @@ function theme_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
 	) );
+	add_theme_support( 'custom-header', array(
+		'default-image' => 'https://images.unsplash.com/35/hKViPxgDRGuiGns6wv5S_IMG_5317.jpeg?q=80&fm=jpg&s=d7581269d0ca00cda672a43a81dec2f2',
+		'height' => 600, 
+		'width' => 600,
+		'uploads' => true,
+		'header-text' => true
+	));
 
 }
 endif;
@@ -117,7 +125,7 @@ add_filter( 'wp_page_menu_args', 'hackeryou_page_menu_args' );
  * Sets the post excerpt length to 40 characters.
  */
 function hackeryou_excerpt_length( $length ) {
-	return 40;
+	return 100;
 }
 add_filter( 'excerpt_length', 'hackeryou_excerpt_length' );
 
@@ -166,15 +174,21 @@ function hackeryou_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-	register_sidebar( 
-		array(
-			'name' => 'Custom Widget Area',
-			'id' => 'custom-widget-area',
-			'description' => 'Custom widget area :)'
-		)
-	);
+
+	if ( function_exists('register_sidebar') )
+    register_sidebar( array(
+   'name' => 'Custom Widget Area',
+   'id' => 'custom-widget-area',
+   'description' => 'An optional widget area for your site footer',
+   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+   'after_widget' => "</aside>",
+   'before_title' => '<h3 class="widget-title">',
+   'after_title' => '</h3>',
+   ) );
 
 }
+
+
 
 add_action( 'widgets_init', 'hackeryou_widgets_init' );
 

@@ -1,0 +1,35 @@
+.headerImg {
+	height: 91vh;
+	width: 50%;
+}
+
+.accentDiv {
+	position: relative;
+	height: 91vh;
+	background: peachpuff;
+	width: 50%;
+
+}
+
+.headerText {
+	position: absolute;
+	bottom: 15vh;
+	margin-left: 15%;
+}
+
+.fullPageHeader {
+	position: relative;
+	height: 50vh;
+	background: peachpuff;
+
+}
+
+.fullPageTitle {
+	position: absolute;
+	width: 50%;
+	margin: 2vh;
+	height: 46vh;
+	background: rgba(255,255,255,0.85);
+	align-items: center;
+	justify-content: center;	
+}

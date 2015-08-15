@@ -1,0 +1,63 @@
+github!!!
+
+Github wordpress notes!
+
+1. Create our organization.
+- a. Give it a name
+- b. Add owners, these are the people you are working with
+- c. Good to go.
+
+2. Create empty repo on GitHub. DO NOT! initialize with a readme.md file.
+
+3. Initialize GIT on your project, on YOUR computer. In the theme itself. 
+
+4. Pick one person to push the initial commit to the organization.
+- a. This person should add the files: git add -A
+- b. This person should commit the files: git commit -m "Initial Commit"
+- c. This person should add the organization repo as their upstream now.
+- git remote add upstream <orginazationUrl>
+- d. push files up to the organization Github: git push upstream master 
+
+5. Everyone fork the ORG repo so they have a copy of their own. After the initial commit we should never push to the ORG again.
+
+6. Clone your repo if you do NOT have the files on your computer yet!
+- git clone <YOURurl>
+
+7. Add remote for origin on YOUR computer IF you were the first to push.
+- git remote add origin <YOURurl>
+- a. Else you have set up the upstream, do that now.
+- git remote add upstream <orginazationUrl>
+
+8. Start working! And follow these steps
+- a. When you are ready to commit check the status of the repo.
+- git status
+- b. Add files you want to commit.
+- git add -A 
+- c. (optional) Check status of repo again
+- git status
+- d. Commit files.
+- git commit -m "Message goes here"
+- e. Pull the upstream in case changes were made.
+- git pull upstream master
+- f. Now push to origin
+- git push origin master
+
+9. Create a pull request FROM YOUR version to the ORG version. 
+
+10. If a new pull request is made and merged on the ORG. Whoever did NOT make the pull request should pull from upstream. NOTE! If you are working on files, you will have to add and commit these files FIRST before you pull.
+
+11. If you DO have uncommitted files and you try to pull, you will get an error. So simply add and commit those files. 
+
+12. Repeat step 8. 
+
+13. If there is a merge conflict. Make sure you read the message. Inside the that has the conflict you will see this!
+
+<<<<<<<<<<<HEAD
+//Some code. THIS is YOUR code from your latest commit
+===============
+//Some more Code. This is SOMEONE ELSES code from their commit.
+<<<<<<<<<<<<8732980riafjoify981703u4iyoh1l2j
+
+Review the code, and decide which one is need. You might have to combine the two or you might just get rid of one completely. When you are done remove the <<<<<<<HEAD, ======, <<<<<76489012370yui. Add, commit and push our fix.
+
+14. If you make a pull request and it can NOT be merged right away. On YOUR computer do a git pull on the upstream to make sure you have the latest files. If there is a conflict follow step 13. 

@@ -15,16 +15,25 @@
 <?php // if there are posts, Start the Loop. ?>
 
 <?php while ( have_posts() ) : the_post(); ?>
+	<?php if (has_post_thumbnail( $post->ID ) ): ?>
+		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'single-post-thumbnail' ); ?>
+		<?php endif; ?>
+	
+<div class="blogWrapper flex">
+		<div class="featureImg" style="background: url(<?php echo $image[0]; ?>) no-repeat; background-size: cover;">
 
+		</div>	
+	<div class="articleWrapper">
 		<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 			<h2 class="entry-title">
         <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
           <?php the_title(); ?>
         </a>
       </h2>
-
+			
+		
 			<section class="entry-content">
-				<?php the_content('Continue reading <span class="meta-nav">&rarr;</span>'); ?>
+				<?php the_excerpt(); ?> 
 				<?php wp_link_pages( array(
           'before' => '<div class="page-link"> Pages:',
           'after' => '</div>'
@@ -37,7 +46,13 @@
         <p></p>
 			</footer>
 
-		</article><!-- #post-## -->
+
+
+		</article>
+	</div><!-- #post-## -->
+</div>
+		
+
 
 		<?php comments_template( '', true ); ?>
 
