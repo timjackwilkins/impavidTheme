@@ -21,13 +21,6 @@ Mixins
 ====================================
 */
 
-@mixin flex {
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-}
 
 /*
 ====================================
@@ -35,10 +28,10 @@ Default Styling
 ====================================
 */
 
-
 html {
 	position: relative;
-	background: peachpuff;
+	// background: peachpuff;
+
 }
 
 img {
@@ -52,7 +45,7 @@ body {
 
 .container {
 	max-width: 85%;
-	margin: 0 auto;
+	margin: 0 auto 5vh;
 }
 
 .content {
@@ -73,19 +66,46 @@ body {
 	display: flex;
 }
 
- .blogWrapper:nth-child(even) > .featureImg {
+
+.blogWrapper:nth-child(even) > .featureImg {
   order: 2
 }
 
 .featureImg {
-	background: red;
+	background: blanchedalmond;
 	width: 50%;
 }
 
 .articleWrapper {
-	background: peachpuff;
+	// background: peachpuff;
 	width: 50%;
 	padding: 2% 7.5%;
 }
+
+.accentBorder {
+	position: relative;
+}
+
+.accentBorder:after {
+	content: "";
+	width: 5vh;
+	height: 2px;
+	position: absolute;
+	bottom: -1.5vh;
+	left: 0;
+	background-color: #333;
+}
+
+.entry-meta {
+	font-family: 'Cutive Mono', sans-serif;
+	align-items: center;
+	justify-content: center;
+}
+
+.entry-utility {
+	font-family: 'Cutive Mono', sans-serif;
+}
+
+
 
 

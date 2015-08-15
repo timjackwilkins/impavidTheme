@@ -8,6 +8,7 @@
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
   <?php // Load our CSS ?>
+  <link href='http://fonts.googleapis.com/css?family=Cutive+Mono|Montserrat:400,700' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" type="text/css" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 
   <?php wp_head(); ?>
@@ -32,10 +33,6 @@
                 )); ?>
             </nav>
         </div>
-  </div> 
-<!-- /.container -->
-
-
-
+  </div><!-- /.container -->
 </header><!--/.header-->
 

@@ -1,14 +1,14 @@
 .headerImg {
-	height: 91vh;
+
+	height: 91.5h;
 	width: 50%;
 }
 
 .accentDiv {
 	position: relative;
-	height: 91vh;
+	height: 91.5vh;
 	background: peachpuff;
 	width: 50%;
-
 }
 
 .headerText {
@@ -21,7 +21,7 @@
 	position: relative;
 	height: 50vh;
 	background: peachpuff;
-
+	margin-bottom: 5vh;
 }
 
 .fullPageTitle {
@@ -33,3 +33,12 @@
 	align-items: center;
 	justify-content: center;	
 }
+
+
+.singleTitle {
+	height: 50vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+

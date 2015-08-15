@@ -16,17 +16,7 @@
 
 <?php while ( have_posts() ) : the_post(); ?>
 
-		<?php if (has_post_thumbnail( $post->ID ) ): ?>
-		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'thumbnail_size' ); ?>
-		<?php endif; ?>
-
 		<div class="blogWrapper flex">
-			<div class="featureImg" style="background: url('<?php echo $image[0]; ?>') no-repeat; background-size: cover;">
-				<!-- <img src="http://placehold.it/100x100" alt=""> -->
-			</div>
-
-		
-			<div class="articleWrapper">
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<h2 class="entry-title accentBorder">
 		        <a href="<?php the_permalink(); ?>" title="Permalink to: <?php esc_attr(the_title_attribute()); ?>" rel="bookmark">
@@ -49,10 +39,7 @@
 					</footer>
 
 				</article><!-- #post-## -->
-			</div>
-		
 	</div>
-
 		<?php comments_template( '', true ); ?>
 
 

@@ -42,6 +42,14 @@ function theme_setup() {
 		'header-text' => true
 	));
 
+	add_theme_support( 'custom-header', array(
+		'default-image' => 'https://images.unsplash.com/22/open-door.JPG?q=80&fm=jpg&s=f07f9a74406b3fe7bfa566e8567cbc6c',
+		'width'         => 600,
+		'height'        => 600,
+		'uploads'       => true,
+		'header-text'   => true
+	) );
+
 }
 endif;
 
@@ -174,17 +182,16 @@ function hackeryou_widgets_init() {
 		'after_title' => '</h3>',
 	) );
 
-
 	if ( function_exists('register_sidebar') )
-    register_sidebar( array(
-   'name' => 'Custom Widget Area',
-   'id' => 'custom-widget-area',
-   'description' => 'An optional widget area for your site footer',
-   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-   'after_widget' => "</aside>",
-   'before_title' => '<h3 class="widget-title">',
-   'after_title' => '</h3>',
-   ) );
+	    register_sidebar( array(
+	   'name' => 'Custom Widget Area',
+	   'id' => 'custom-widget-area',
+	   'description' => 'An optional widget area for your site footer',
+	   'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+	   'after_widget' => "</aside>",
+	   'before_title' => '<h3 class="widget-title">',
+	   'after_title' => '</h3>',
+	   ) );
 
 }
 
