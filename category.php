@@ -1,8 +1,8 @@
 <?php get_header(); ?>
-<p>Test Test I'm category.php!</p>
+
 <div class="main">
   <div class="container">
-    <div class="content">
+    <!-- <div class="content"> -->
 
       <h1>Category Archives: <?php single_cat_title(); ?></h1>
     	<?php
@@ -12,9 +12,9 @@
     	   get_template_part( 'loop', 'category' );
         ?>
 
-    </div> <!-- /.content -->
+   <!--  </div>  --><!-- /.content -->
 
-    <?php get_sidebar(); ?>
+    <?php //get_sidebar(); ?>
 
   </div> <!-- /.container -->
 </div> <!-- /.main -->

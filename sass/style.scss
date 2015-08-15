@@ -9,15 +9,29 @@
 
 @import 'normalize';
 @import 'typography';
+@import 'header';
 @import 'navigation';
 @import 'sidebar';
 @import 'comments';
 @import 'footer';
+
+/*
+====================================
+Mixins
+====================================
+*/
+
+
 /*
 ====================================
 Default Styling
 ====================================
 */
+
+html {
+	position: relative;
+	// background: peachpuff;
+}
 
 img {
 	max-width: 100%;
@@ -28,8 +42,8 @@ body {
 }
 
 .container {
-	max-width: 1200px;
-	margin: 0 auto;
+	max-width: 85%;
+	margin: 0 auto 5vh;
 }
 
 .content {
@@ -41,6 +55,54 @@ body {
 .full {
 	width: 100%;
 }
+
+.flex {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+}
+
+.blogWrapper:nth-child(even) > .featureImg {
+  order: 2
+}
+
+.featureImg {
+	background: blanchedalmond;
+	width: 50%;
+}
+
+.articleWrapper {
+	// background: peachpuff;
+	width: 50%;
+	padding: 2% 7.5%;
+}
+
+.accentBorder {
+	position: relative;
+}
+
+.accentBorder:after {
+	content: "";
+	width: 5vh;
+	height: 2px;
+	position: absolute;
+	bottom: -1.5vh;
+	left: 0;
+	background-color: #333;
+}
+
+.entry-meta {
+	font-family: 'Cutive Mono', sans-serif;
+	align-items: center;
+	justify-content: center;
+}
+
+.entry-utility {
+	font-family: 'Cutive Mono', sans-serif;
+}
+
 
 
 
